@@ -1,21 +1,23 @@
 public class TreeOperations {
+    private static int pos = 0;
+
     public static TreeNode insert(int arr[]) {
-        TreeNode head = null;
-        head = insert(head, arr, 0);
-        return head;
+        pos = 0;
+        return insertHelper(arr);
     }
 
-    private static TreeNode insert(TreeNode head, int[] arr, int i) {
-        if (arr[i] == Integer.MIN_VALUE)
+    private static TreeNode insertHelper(int[] arr) {
+        if (pos >= arr.length)
             return null;
-        head = new TreeNode(arr[i]);
-        int l = 2 * i + 1, r = 2 * i + 2;
-        if (l < arr.length)
-            head.left = insert(head.left, arr, l);
+        int val = arr[pos++];
 
-        if (r < arr.length)
-            head.right = insert(head.right, arr, r);
-        return head;
+        if (val == Integer.MIN_VALUE)
+            return null;
+
+        TreeNode root = new TreeNode(val);
+        root.left = insertHelper(arr);
+        root.right = insertHelper(arr);
+        return root;
     }
 
     public static void preorder(TreeNode head) {
