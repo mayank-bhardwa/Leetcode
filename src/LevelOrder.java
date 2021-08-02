@@ -3,16 +3,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-class Pair {
-    TreeNode n;
-    Integer i;
-
-    Pair(TreeNode t, Integer i) {
-        this.n = t;
-        this.i = i;
-    }
-}
-
 public class LevelOrder {
     public static void main(String[] args) {
         int[] arr = { -9, -3, 2, Integer.MIN_VALUE, 4, 4, 0, Integer.MIN_VALUE, Integer.MIN_VALUE, -6,
