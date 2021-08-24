@@ -11,7 +11,7 @@ public class LargeIsland {
     }
 
     private static int largestIsland(int[][] grid) {
-        List<Set<Pair>> islands = new ArrayList<>();
+        List<Set<Pair<Integer,Integer>>> islands = new ArrayList<>();
 
         for (int i = 0; i < grid.length; i++) {
             for (int j = 0; j < grid.length; j++) {
@@ -19,8 +19,8 @@ public class LargeIsland {
                 { 
                     if(islands.isEmpty())
                     {
-                        Set<Pair> s = new HashSet<>();
-                        s.add(new Pair(i, j));
+                        Set<Pair<Integer, Integer>> s = new HashSet<>();
+                        s.add(new Pair<>(i, j));
 
                         islands.add(s);
                     }
