@@ -9,6 +9,7 @@ public class TreeNode {
 
     TreeNode(int val) {
         this.val = val;
+        this.left = this.right = null;
     }
 
     TreeNode(int val, TreeNode left, TreeNode right) {

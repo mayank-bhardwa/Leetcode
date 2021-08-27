@@ -15,12 +15,12 @@ public class MinimumHeightTree {
         if (n == 1)
             return Arrays.asList(0);
         int[] outDegree = new int[n];
-        List<Integer>[] adjacencyList = new List[n];
+        List<List<Integer>> adjacencyList = new ArrayList<>();
         for (int i = 0; i < n; i++)
-            adjacencyList[i] = new ArrayList<>();
+            adjacencyList.add(new ArrayList<>());
         for (int[] i : edges) {
-            adjacencyList[i[0]].add(i[1]);
-            adjacencyList[i[1]].add(i[0]);
+            adjacencyList.get(i[0]).add(i[1]);
+            adjacencyList.get(i[1]).add(i[0]);
             outDegree[i[0]]++;
             outDegree[i[1]]++;
         }
@@ -40,7 +40,7 @@ public class MinimumHeightTree {
                 f = q.poll();
                 outDegree[f]--;
 
-                for (int i : adjacencyList[f]) {
+                for (int i : adjacencyList.get(f)) {
                     outDegree[i]--;
                     if (outDegree[i] == 1) {
                         q.offer(i);

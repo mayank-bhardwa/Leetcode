@@ -3,4 +3,8 @@
         "src"
     ],
     "java.project.outputPath": "bin",
+    "files.associations": {
+        "atomic": "cpp",
+        "cstdint": "cpp"
+    },
 }
